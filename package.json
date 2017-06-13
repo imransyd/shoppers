@@ -1,0 +1,19 @@
+{
+  "name": "shoppers",
+  "version": "1.0.0",
+  "description": "react redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imransyd/shoppers.git"
+  },
+  "author": "Imran Syed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imransyd/shoppers/issues"
+  },
+  "homepage": "https://github.com/imransyd/shoppers#readme"
+}
