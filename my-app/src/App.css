@@ -1,25 +1,33 @@
-.tabbody {
-	width: 200px; 
-	height: 160px; 
-	border: 1px solid black;
-	padding: 10px;
-	border-radius: 2px;
-}
-.tabheader {
-	
-}
-.tabheader > *:focus {
-	outline: 0;
-	background-color: white;
-}
-.tabheader > * {
-	border-top-right-radius: 10px;
-	border-color: darkgray;
-	border-bottom-color: lightgray;
-	border-width: 1px;
-	margin-left: 2px;
+.App {
+  text-align: center;
 }
 
-.App {
-	padding: 20px;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-image: url('bg.jpg');
+  height: 200px;
+  padding: 20px;
+  color: white;
+  font-family: serif;
+  font-size: 30pt;
+}
+
+
+.images {
+    height: 200px;
+    width: 200px;
+}
+
+.basket{
+  position: absolute;
+  right:0;
+  top:240px;
+  height: 105vh;
+  width: 300px;
+  border: 1px solid black;
+  background-color: aliceblue;
 }

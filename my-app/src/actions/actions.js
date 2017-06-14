@@ -1,48 +1,46 @@
 const CHANGE_TAB = 'CHANGE_TAB';
-const ADD_NUMBER = 'ADD_NUMBER';
-const HISTORY = 'HISTORY';
+const CLICK_ON_ADD = 'CLICK_ON_ADD';
+const UPDATE_BASKET = 'UPDATE_BASKET';
+const UPDATE_HISTORY = 'UPDATE_HISTORY';
+const VIEW_HISTORY = 'VIEW_HISTORY';
+const VIEW_BASKET = 'VIEW_BASKET';
 
 function actionChangeTab(selectedTab) {
 	return {
 		type: CHANGE_TAB,
 		tab: selectedTab
-	}
+	};
 }
 
-function actionAddNumber(x) {
-	return {
-		type: ADD_NUMBER,
-		number: x
-	}
+function actionClickOnAdd(name, price, image) {
+    return {
+        type: CLICK_ON_ADD,
+        productName: name,
+        price:price,
+        picture:image
+        
+    };
+}
+
+function actionUpdateBasket(product) {
+    return {
+        type: UPDATE_BASKET,
+        product
+    };
 }
 
 function actionHistory(action) {
 	return {
-		type: HISTORY,
+		type: UPDATE_HISTORY,
 		action
-	}
-}
-const FETCH_STARTED = 'FETCH_STARTED', FETCH_SUCCESS = 'FETCH_SUCCESS', FETCH_FAILURE = 'FETCH_FAILURE';
-function actionFetchStarted() {
-	return {
-		type: FETCH_STARTED
-	}
-}
-function actionFetchSuccess(data) {
-	return {
-		type: FETCH_SUCCESS,
-		data: data
-	}
-}
-function actionFetchFailure(error) {
-	return {
-		type: FETCH_FAILURE,
-		error: error
-	}
+	};
 }
 
-export { CHANGE_TAB, actionChangeTab, ADD_NUMBER, actionAddNumber, HISTORY, actionHistory,
-actionFetchStarted, actionFetchSuccess, actionFetchFailure, FETCH_STARTED, FETCH_SUCCESS, FETCH_FAILURE };
+function actionShowBasket(showBasket){
+    return{
+        type: VIEW_BASKET,
+        showBasket
+    };
+}
 
-
-
+export { CHANGE_TAB, actionChangeTab, CLICK_ON_ADD, actionClickOnAdd, UPDATE_BASKET, actionUpdateBasket, UPDATE_HISTORY, actionHistory,VIEW_HISTORY,VIEW_BASKET,actionShowBasket };
