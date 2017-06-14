@@ -1,4 +1,4 @@
-import { CHANGE_TAB, ADDPRODUCT,DELETEPRODUCT,BASKET, HISTORY, } from '../actions/actions.js';
+import { CHANGE_TAB, ADD_NUMBER, HISTORY, FETCH_STARTED, FETCH_SUCCESS, FETCH_FAILURE } from '../actions/actions.js';
 
 /*function rootReducer(state = initialState, action) {
 	console.log('rootReducer state:', state, action)
@@ -26,27 +26,17 @@ function tabReducer(state = 1, action) {
 			return state;
 	}
 }
-function productsReducer(state = [], action) {
+function numbersReducer(state = [], action) {
 	switch( action.type ) {
-        case ADDPRODUCT:
-			return [...state, action];
-        case DELETEPRODUCT:
-			return [...state, action];    
+		case ADD_NUMBER:
+			return [...state, action.number];
 		default:
 			return state;
 	}
 }
-
-function shopsReducer(state = [], action) {
-	switch(action.type ) {
-		case BASKET:
-            //takes the basket which is in state 
-          return [...state, action];
-		default:
-			return state;
-	}
+function pictureReducer(state = '', action) {
+	return state;
 }
-
 
 function historyReducer(state = [], action) {
 	switch( action.type ) {
@@ -57,5 +47,29 @@ function historyReducer(state = [], action) {
 	}
 }
 
+function fetchReducer(state = {status: 0, data: null}, action) {
+	switch( action.type ) {
+		case FETCH_STARTED:
+			return {
+				status: 1,
+				data: null
+			};
+		case FETCH_SUCCESS:
+			return {
+				status: 2,
+				data: action.data
+			};
+		case FETCH_FAILURE:
+			return {
+				status: 3,
+				data: action.error
+			};
+		default:
+			return state;
+	}
+}
 
-export {tabReducer,shopsReducer, productsReducer,  historyReducer};
+export {tabReducer, numbersReducer, pictureReducer, historyReducer, fetchReducer};
+
+
+

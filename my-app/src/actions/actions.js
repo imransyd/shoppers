@@ -1,8 +1,7 @@
 const CHANGE_TAB = 'CHANGE_TAB';
-const ADDPRODUCT = 'ADDPRODUCT';
+const ADD_NUMBER = 'ADD_NUMBER';
 const HISTORY = 'HISTORY';
-const DELETEPRODUCT='DELETEPRODUCT';
-const BASKET='BASKET';
+
 function actionChangeTab(selectedTab) {
 	return {
 		type: CHANGE_TAB,
@@ -10,43 +9,40 @@ function actionChangeTab(selectedTab) {
 	}
 }
 
-function ActionAddProduct(name, price, image) {
+function actionAddNumber(x) {
 	return {
-		type: ADDPRODUCT,
-        id:name+price,
-		flowersName: name,
-        flowersPrice:price,
-        flowersImg:image
-	}
-}
-
-function ActionDeleteProduct(name, price, image) {
-	return {
-		type: DELETEPRODUCT,
-        
-		flowersName: name,
-        flowersPrice:price,
-        flowersImg:image
-	}
-}
-function ActionBasket(name, price) {
-	return {
-        
-		type: BASKET,
-        id:name+price,
-		flowersName: name,
-        flowersPrice:price
-        
+		type: ADD_NUMBER,
+		number: x
 	}
 }
 
 function actionHistory(action) {
 	return {
 		type: HISTORY,
-		action,
-        color:color,
+		action
+	}
+}
+const FETCH_STARTED = 'FETCH_STARTED', FETCH_SUCCESS = 'FETCH_SUCCESS', FETCH_FAILURE = 'FETCH_FAILURE';
+function actionFetchStarted() {
+	return {
+		type: FETCH_STARTED
+	}
+}
+function actionFetchSuccess(data) {
+	return {
+		type: FETCH_SUCCESS,
+		data: data
+	}
+}
+function actionFetchFailure(error) {
+	return {
+		type: FETCH_FAILURE,
+		error: error
 	}
 }
 
-export { CHANGE_TAB, actionChangeTab, ADDPRODUCT,ActionAddProduct, DELETEPRODUCT,ActionDeleteProduct,BASKET,ActionBasket, HISTORY, actionHistory,
-};
+export { CHANGE_TAB, actionChangeTab, ADD_NUMBER, actionAddNumber, HISTORY, actionHistory,
+actionFetchStarted, actionFetchSuccess, actionFetchFailure, FETCH_STARTED, FETCH_SUCCESS, FETCH_FAILURE };
+
+
+
