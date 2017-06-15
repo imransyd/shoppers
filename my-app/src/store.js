@@ -3,9 +3,9 @@ import rootReducer from './reducers'
 import { berries } from 'react-redux-firebase'
 // Replace with your Firebase config
 const fbConfig = {
-    apiKey: "AIzaSyA32VZuHQ6NC4Ucx1EgcN7hNi5sCtaxoBM",
-    authDomain: "berries-69d05.firebaseapp.com",
-    databaseURL: "https://berries-69d05.firebaseio.com"
+    apiKey: "AIzaSyC4RQXchvKYkIod23X7OkJ-11COy5RqKzQ",
+    authDomain: "shoppers-59526.firebaseapp.com",
+    databaseURL: "https://shoppers-59526.firebaseio.com",
 }
 export default function configureStore (initialState, history) {
   const createStoreWithMiddleware = compose(

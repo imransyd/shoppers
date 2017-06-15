@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import ListView from './ListView';
-import Picture from './picture';
-import History from './history';
+import Picture from './Picture';
+import History from './History';
 import {actionChangeTab, actionClickOnAdd, actionUpdateBasket, actionHistory,actionShowBasket} from '../actions/actions.js';
 import {connect} from 'react-redux';
 import Basket from "./basket";
@@ -21,7 +21,6 @@ import Basket from "./basket";
     );
   }
 }
-
 export default ProductGallery;*/}
 
 
@@ -33,6 +32,7 @@ class ProductGallery extends Component {
         this.ClickOnAdd = this.ClickOnAdd.bind(this);
         this.toggleBasket = this.toggleBasket.bind(this);
         this.addToBasket = this.addToBasket.bind(this);
+        this.removeFromCart = this.removeFromCart.bind(this);
 	}
 
 	toggleBasket(){
@@ -42,6 +42,10 @@ class ProductGallery extends Component {
 
     addToBasket(e){
 	    let elm = JSON.parse(e.target.attributes["data-item"].nodeValue);
+        this.props.dispatch(actionUpdateBasket(elm));
+    }
+    removeFromCart(e){
+        	    let elm = JSON.parse(e.target.attributes["data-item"].nodeValue);
         this.props.dispatch(actionUpdateBasket(elm));
     }
 

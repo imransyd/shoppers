@@ -13,20 +13,20 @@ let initialState = {
      products: [
                 {
                  id:4,
-                 productName: 'rasberries',  
-                 picture: 'https://www.organicfacts.net/wp-content/uploads/2013/05/Raspberry11.jpg', 
+                 productName: 'Nike',  
+                 picture: 'https://imransyd.github.io/shoppers/my-app/images/kristian-olsen-114779.jpg', 
                  price: 4},
                 
                 {
                  id:2,
-                 productName: 'blueberries',  
-                 picture: 'https://cdn.authoritynutrition.com/wp-content/uploads/2015/02/three-blueberries.jpg', 
+                 productName: 'all Star',  
+                 picture: 'https://imransyd.github.io/shoppers/my-app/images/camila-damasio-91788.jpg', 
                  price: 3},
                 
                 {
                  id:3,
-                 productName: 'strawberries',  
-                 picture: 'http://i.dailymail.co.uk/i/pix/2015/05/18/00/24BA71B400000578-0-image-a-24_1431906929382.jpg', 
+                 productName: 'addidas',  
+                 picture: 'https://imransyd.github.io/shoppers/my-app/images/goh-rhy-yan-281693.jpg', 
                  price: 2}
               ],
     basket: [],

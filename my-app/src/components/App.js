@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h1>
-            Berry num num..
+            SHOPPERS
           </h1>
         </div>
         <ProductGallery />

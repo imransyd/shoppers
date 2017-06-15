@@ -1,4 +1,4 @@
-    import { CHANGE_TAB, CLICK_ON_ADD, UPDATE_BASKET,  UPDATE_HISTORY,VIEW_HISTORY, VIEW_BASKET } from '../actions/actions.js';
+   import { REMOVE_FRM_BASKET, CHANGE_TAB, CLICK_ON_ADD, UPDATE_BASKET,  UPDATE_HISTORY,VIEW_HISTORY, VIEW_BASKET } from '../actions/actions.js';
 
 
 
@@ -23,9 +23,14 @@
     function basketReducer(state = [], action) {
         switch(action.type) {
             case UPDATE_BASKET:
+                console.log('basketreducer update basket=',state,action)
                 return [...state, action.product];
+            case REMOVE_FRM_BASKET:
+                return state.filter( i => i.id !== action.item.id);
             default:
-                console.log(state, action);
+                console.log('basketReducer state=',
+                            state, action);
+                //  state === [undefined]
                 return state;
 
         }
@@ -35,7 +40,7 @@
    function historyReducer(state = [], action) {
         switch(action.type) {
             case UPDATE_HISTORY:
-                return //show all the actions
+                return [...state, action.action];
                 
             default:
                 console.log(state, action);

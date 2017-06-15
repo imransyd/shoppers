@@ -12,8 +12,10 @@ function ListView(props) {
             <br />
             price: {x.price}
             <br />
-            <button data-item={JSON.stringify({title:x.productName, price: x.price})} onClick={props.addToBasket}>Add to basket</button>
-        </li>
+            <button data-item={JSON.stringify({picture:x.picture, title:x.productName, price: x.price})} onClick={props.addToBasket}>Add to basket</button>
+            <button id={x.productName + x.price} 
+                    onClick={props.handleClickDeleteProduct}>Delete product</button>
+    </li>
     );
     return (
         <div>
