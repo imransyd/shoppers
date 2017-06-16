@@ -1,65 +1,60 @@
-   import { REMOVE_FRM_BASKET, CHANGE_TAB, CLICK_ON_ADD, UPDATE_BASKET,  UPDATE_HISTORY,VIEW_HISTORY, VIEW_BASKET } from '../actions/actions.js';
+import { CHANGE_TAB, ADDPRODUCT,BASKET,DELETEPRODUCT,DELETE_FROM_BASKET,HISTORY} from '../actions/actions.js';
 
 
 
-    function tabReducer(state = 1, action) {
-        switch( action.type ) {
-            case CHANGE_TAB:
-                return action.tab;
-            default:
-                return state;
-        }
-    }
+function tabReducer(state = 1, action) {
+	switch( action.type ) {
+		case CHANGE_TAB:
+			return action.tab;
+		default:
+			return state;
+	}
+}
+function productsReducer(state = [], action) {
+	switch( action.type ) {
+        case ADDPRODUCT:
+			return [...state, action];
+        
+         case DELETEPRODUCT:
+			let Removed =
+            state.filter(function(elemenet) {return elemenet.id !== action.id;});
+		    return Removed;
+		    
+                        
+        default:
+            return state;
+		}
+}
 
-    function productReducer(state = [], action) {
-        switch( action.type ) {
-            case CLICK_ON_ADD:
-                return [...state, action];
-            default:
-                return state;
-        }
-    }
-
-    function basketReducer(state = [], action) {
-        switch(action.type) {
-            case UPDATE_BASKET:
-                console.log('basketreducer update basket=',state,action)
-                return [...state, action.product];
-            case REMOVE_FRM_BASKET:
-                return state.filter( i => i.id !== action.item.id);
-            default:
-                console.log('basketReducer state=',
-                            state, action);
-                //  state === [undefined]
-                return state;
-
-        }
-    }
+function basketReducer(state = [], action) {
+	switch(action.type ) {
+		case BASKET:
+          return 
+                [...state, action];
+            
+        case DELETE_FROM_BASKET:
+         let Removed=
+                state.filter(function(element){
+                 return element.id !== action.id;    
+        });
+            return Removed;
+		default:
+			return state;
+	}
+}
 
 
-   function historyReducer(state = [], action) {
-        switch(action.type) {
-            case UPDATE_HISTORY:
-                return [...state, action.action];
-                
-            default:
-                console.log(state, action);
-                return state;
+function historyReducer(state = [], action) {
+	switch( action.type ) {
+		case HISTORY:
+			return [...state, action.action];
+		default:
+			return state;
+	}
+}
 
-        }
-    }
 
-    function changeViewReducer(state={}, action){
-        switch(action.type){
-            case VIEW_BASKET:
-                return {...state, showBasket: action.showBasket};
-            case VIEW_HISTORY:
-                return {...state, showHistory: action.showHistory};
-            default:
-                return state;
-        }
-    }
+export {tabReducer,basketReducer, productsReducer, historyReducer};
 
 
 
-    export { tabReducer, productReducer, basketReducer, historyReducer, changeViewReducer };

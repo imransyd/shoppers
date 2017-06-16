@@ -1,33 +1,72 @@
+.tabbody {
+	width: auto; 
+	height: auto; 
+	padding: 10px;
+	border-radius: 2px;
+}
+.tabheader {
+	
+}
+.tabheader > *:focus {
+	outline: 0;
+	background-color: aliceblue;
+    
+}
+.tabheader > * {
+	border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+	border-color: darkgray;
+	border-bottom-color: blueviolet;
+	border-width: 4px;
+	margin-left: 10px;
+    
+}
+
 .App {
-  text-align: center;
-  background-image: url('https://imransyd.github.io/shoppers/my-app/images/emre-karatas-256980%20(1).jpg');
-    background-repeat: no-repeat;        
-    position: relative;        
-    width: 85%;            
-    height: 610px;       
-    margin-left: auto;      
-    margin-right: auto
+	padding: 20px;
+}
+.productsImg{
+    width: 15em;
+    height: auto; 
+    
+}
+.showBasket { 
+    display: inline-block; 
+    margin-top:-500px;
+    background-color:rgba(220,220,220,.5);
+    border: 3px solid black;
+    
+} 
+.ProductList {
+    font-size: 20px;
+    color:mediumvioletred;
+    background-color:rgba(220,220,220,.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10%;
+    text-align: center;
+    margin-bottom:4%;
+    padding-bottom:10%;
+    
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Form {
+    font-size: 10px;
+    color:white;
+    background-color:rgba(220,220,220,.5);    
+    text-transform: uppercase;
+    border-radius: 20%;
+    text-align: center;
+    
+    padding:2%;
+    
 }
 
 
 
-
-.images {
-    height: 200px;
-    width: 200px;
-}
-
-.basket{
-  position: absolute;
-  right:0;
-  top:240px;
-  height: 105vh;
-  width: 300px;
-  border: 1px solid black;
-  background-color: aliceblue;
-}
+#ADDPRODUCT{color:chartreuse;}
+#DELETEPRODUCT{color:crimson;}
+#BASKET {color:aqua;}
+#DELETEBASKET{color:blueviolet;}

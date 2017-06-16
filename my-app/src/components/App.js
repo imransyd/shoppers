@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
-import ProductGallery from './product-gallery';
-
+import TabContainer from './TabContainer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>
-            SHOPPERS
-          </h1>
+        <div>
+        <h1>SHOPPERS</h1>
+      <TabContainer/>
         </div>
-        <ProductGallery />
-      </div>
-
     );
   }
 }

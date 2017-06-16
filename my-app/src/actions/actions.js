@@ -1,55 +1,68 @@
 const CHANGE_TAB = 'CHANGE_TAB';
-const CLICK_ON_ADD = 'CLICK_ON_ADD';
-const UPDATE_BASKET = 'UPDATE_BASKET';
-const UPDATE_HISTORY = 'UPDATE_HISTORY';
-const REMOVE_FRM_BASKET = 'REMOVE_FRM_BASKET';
-const VIEW_HISTORY = 'VIEW_HISTORY';
-const VIEW_BASKET = 'VIEW_BASKET';
-
+const ADDPRODUCT = 'ADDPRODUCT';
+const HISTORY = 'HISTORY';
+const DELETEPRODUCT='DELETEPRODUCT';
+const BASKET='BASKET';
+const DELETE_FROM_BASKET='DELETE_FROM_BASKET';
 function actionChangeTab(selectedTab) {
 	return {
 		type: CHANGE_TAB,
 		tab: selectedTab
-	};
+	}
 }
 
-function actionClickOnAdd(name, price, image) {
-    return {
-        
-        type: CLICK_ON_ADD,
-        
-        productName: name,
-        price:price,
-        picture:image
-        
-    };
+function ActionAddProduct(name, price, image) {
+	return {
+		type : ADDPRODUCT,
+        id:name+price,
+		productName: name,
+        productPrice:price,
+        productImg:image
+	}
+}
+function ActionDeleteProduct(id,name, price, image) {
+	return {
+		type: DELETEPRODUCT,
+        id: id,
+		productName: name,
+        productPrice:price,
+        productImg:image
+	}
 }
 
-function actionUpdateBasket(product) {
-    return {
-        type: UPDATE_BASKET,
-        product
-    };
+
+function ActionBasket(id,name, price,image) {
+	return {
+        
+		type: BASKET,
+        id:id,
+		productName: name,
+        productPrice:price,
+        productImg:image
+        
+	}
 }
-function removeFromCart (product) {
-  return {
-      type: REMOVE_FRM_BASKET,
-      product
-  };
+function ActionDeleteFromBasket(id,name, price, image) {
+	return {
+		type: DELETE_FROM_BASKET,
+        id: id,
+		productName: name,
+        productPrice:price,
+        productImg:image
+	}
 }
 
 function actionHistory(action) {
 	return {
-		type: UPDATE_HISTORY,
-		action
-	};
+		type: HISTORY,
+		action,
+        
+	}
 }
 
-function actionShowBasket(showBasket){
-    return{
-        type: VIEW_BASKET,
-        showBasket
-    };
-}
 
-export { removeFromCart, REMOVE_FRM_BASKET, CHANGE_TAB, actionChangeTab, CLICK_ON_ADD, actionClickOnAdd, UPDATE_BASKET, actionUpdateBasket, UPDATE_HISTORY, actionHistory,VIEW_HISTORY,VIEW_BASKET,actionShowBasket };
+export { CHANGE_TAB, actionChangeTab, ADDPRODUCT, ActionAddProduct, DELETEPRODUCT, ActionDeleteProduct, BASKET, ActionBasket, DELETE_FROM_BASKET, ActionDeleteFromBasket, HISTORY, actionHistory
+};
+
+
+

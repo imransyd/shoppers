@@ -1,45 +1,43 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../App.css';
-import {removeFromCart} from '../actions/actions.js';
 
-
-export default class Basket extends Component {
- constructor (props){
-    super (props);
-    this.removeFromCart=this.removeFromCart.bind(this);
-    }
-    removeFromCart(){
+function Basket(props) {
+    
+    let i=0;
+	const list = props.productsVariable.map( 
+        x => <li id={x.productName+x.productPrice}  key={i++}>
+        name: {x.productName} 
+        price: {x.productPrice} 
+        <img className="productsImg" 
+        src={x.productImg} 
+        alt={x.productName} />
+    <button onClick={props.handleClickDeleteBasket}
+        id={x.productName+x.productPrice}>
+        
+            X
+        
+        </button>                                        
+    </li> )
+     
+    var SumTotal = 0 ;
+     for(i=0; i<props.productsVariable.length; i++)
+    {
+        SumTotal= 
+            SumTotal + props.productsVariable[i].productPrice;
         
     }
     
-    
-  render() {
-      console.log('basket.js render basketItems=', this.props.basketItems)
-      let list = this.props.basketItems.map((item,index)=>{
-          console.log('item index show=',item,index)
-          return (
-              
-            <li key={index}>
-                <p><img src={item.picture} width={80} height={60} mode='fit'/></p>
-                <p>{item.title}</p>
-                <p>:-{item.price}SEK</p>
-              
-                <button className="removebutton" 
-                onClick={ () => action.removeFromCart(item)} > 
-          Remove 
-        </button>
-            </li>
+                                            
+	return ( <div><h1> Cart </h1>
+              <div><h1> Sum Total {SumTotal}</h1></div>                         
+                                   
+            <ul>{list}</ul>
+            
+            </div>                                
           );
-      });
 
-    return (
-        <div className="basket">
-            <p>My Cart</p>
-            <ul>
-                {list}
-            </ul>
-        </div>
-    );
-  }
+                            
 }
 
+    
+export default Basket;
