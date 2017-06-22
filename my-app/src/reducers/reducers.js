@@ -1,4 +1,4 @@
-import { CHANGE_TAB, ADDPRODUCT,BASKET,DELETEPRODUCT,DELETE_FROM_BASKET,HISTORY} from '../actions/actions.js';
+import { CHANGE_TAB, ADDPRODUCT,CART,DELETEPRODUCT,DELETECART,HISTORY} from '../actions/actions.js';
 
 
 
@@ -14,26 +14,25 @@ function productsReducer(state = [], action) {
 	switch( action.type ) {
         case ADDPRODUCT:
 			return [...state, action];
-        
-         case DELETEPRODUCT:
+        case DELETEPRODUCT:
 			let Removed =
-            state.filter(function(elemenet) {return elemenet.id !== action.id;});
+            //filter trough state and all elements which their is not the same as action.id in delete action     
+            state.filter(function(elemenet) {
+			return elemenet.id !== action.id;
+		});
 		    return Removed;
-		    
-                        
         default:
             return state;
 		}
 }
 
-function basketReducer(state = [], action) {
+function cartReducer(state = [], action) {
 	switch(action.type ) {
-		case BASKET:
-          return 
-                [...state, action];
-            
-        case DELETE_FROM_BASKET:
-         let Removed=
+		case CART:
+            //takes the basket which is in state 
+          return [...state, action];
+        case DELETECART:
+            let Removed=
                 state.filter(function(element){
                  return element.id !== action.id;    
         });
@@ -54,7 +53,7 @@ function historyReducer(state = [], action) {
 }
 
 
-export {tabReducer,basketReducer, productsReducer, historyReducer};
+export {tabReducer,cartReducer, productsReducer, historyReducer};
 
 
 

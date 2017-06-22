@@ -2,8 +2,8 @@ const CHANGE_TAB = 'CHANGE_TAB';
 const ADDPRODUCT = 'ADDPRODUCT';
 const HISTORY = 'HISTORY';
 const DELETEPRODUCT='DELETEPRODUCT';
-const BASKET='BASKET';
-const DELETE_FROM_BASKET='DELETE_FROM_BASKET';
+const CART='CART';
+const DELETECART='DELETECART';
 function actionChangeTab(selectedTab) {
 	return {
 		type: CHANGE_TAB,
@@ -20,6 +20,7 @@ function ActionAddProduct(name, price, image) {
         productImg:image
 	}
 }
+
 function ActionDeleteProduct(id,name, price, image) {
 	return {
 		type: DELETEPRODUCT,
@@ -29,12 +30,10 @@ function ActionDeleteProduct(id,name, price, image) {
         productImg:image
 	}
 }
-
-
-function ActionBasket(id,name, price,image) {
+function ActionCart(id,name, price,image) {
 	return {
         
-		type: BASKET,
+		type: CART,
         id:id,
 		productName: name,
         productPrice:price,
@@ -42,9 +41,9 @@ function ActionBasket(id,name, price,image) {
         
 	}
 }
-function ActionDeleteFromBasket(id,name, price, image) {
+function ActionDeleteCart(id,name, price, image) {
 	return {
-		type: DELETE_FROM_BASKET,
+		type: DELETECART,
         id: id,
 		productName: name,
         productPrice:price,
@@ -61,7 +60,10 @@ function actionHistory(action) {
 }
 
 
-export { CHANGE_TAB, actionChangeTab, ADDPRODUCT, ActionAddProduct, DELETEPRODUCT, ActionDeleteProduct, BASKET, ActionBasket, DELETE_FROM_BASKET, ActionDeleteFromBasket, HISTORY, actionHistory
+export { CHANGE_TAB, actionChangeTab, 
+    ADDPRODUCT,ActionAddProduct,DELETEPRODUCT,ActionDeleteProduct,
+    CART,ActionCart,DELETECART,ActionDeleteCart,
+    HISTORY, actionHistory,
 };
 
 

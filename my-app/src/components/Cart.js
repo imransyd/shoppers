@@ -13,7 +13,7 @@ function Cart(props) {
             price: {x.productPrice} USD <br/>
             
                                    
-    <button onClick={props.handleClickDeleteBasket} id={x.productName+x.productPrice}>Delete</button>                                        
+    <button onClick={props.handleClickDeleteCart} id={x.productName+x.productPrice}>Delete</button>                                        
     </li> )
      
     var totalPrice = 0 ;
@@ -26,7 +26,7 @@ function Cart(props) {
 	return ( <div><h1>Shopping Cart</h1>
               <div><h1> Total price : {totalPrice} USD</h1></div>                         
                                    
-            <ul>{list}</ul>
+            <ul  className="ProductList">{list}</ul>
             
             </div>                                
           );
