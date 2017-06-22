@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imransyd/shoppers.git"
+    "url": "git+https://github.com/imransyd/shoppers/my-app.git"
   },
   "author": "Imran Syed",
   "license": "ISC",
